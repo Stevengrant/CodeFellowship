@@ -5,13 +5,14 @@
     <title>Title</title>
 </head>
 <body>
+<div th:replace="fragments/nav :: nav"></div>
+
 <h2>login</h2>
+
 <form action="/login" method="post">
-    <div th:if="${user}">
-        <h3>Hello <span th:text="$user"></span>!</h3>
-    </div>
-    <label>username<input type="text"></label>
-    <label>password<input type="password"></label>
+
+    <label>username<input name="username" type="text"></label>
+    <label>password<input name="password" type="password"></label>
     <input type="submit">
 </form>
 </body>
