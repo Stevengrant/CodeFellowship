@@ -8,11 +8,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Collection;
+import java.util.Date;
 
 @Entity
 public class ApplicationUser implements UserDetails {
 
+    public String getLastName() {
+        return lastName;
+    }
 
+    public String getDob() {
+        return dob;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    private String lastName;
+    private String dob;
+    private String bio;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    private String firstName;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
@@ -20,9 +41,13 @@ public class ApplicationUser implements UserDetails {
     String username;
     String password;
 
-    public ApplicationUser(String username, String password){
+    public ApplicationUser(String username, String password, String firstName, String lastName, String dob, String bio){
         this.password = password;
         this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.bio = bio;
     }
     public ApplicationUser(){};
 
