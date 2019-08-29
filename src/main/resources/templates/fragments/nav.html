@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<nav th:fragment="nav">
+    <a href="/">home</a>
+    <h1>< c o d e f e l l o w s h i p ></h1>
+    <div th:if="${user}">
+        <a th:href="${'/users/' + user.id}">My page</a>
+        <a href="/posts"> posts</a>
+        <a href="/logout">log out</a>
+    </div>
+    <div th:unless="${user}">
+        <a href="/login">log in</a>
+        <a href="/signup">sign up</a>
+    </div>
+</nav>
+</html>

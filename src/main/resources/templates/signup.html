@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
+<div th:replace="fragments/nav :: nav"></div>
 <h2>sign up</h2>
 <form action="/signup" method="post">
-    <label>username<input type="text"></label>
-    <label>password<input type="password"></label>
+    <label>Username<br><input name="username" type="text"></label>
+    <br>
+    <label>Password<br><input name="password" type="password"></label>
+    <br>
+    <label>First Name<br><input name="firstName" type="text"></label>
+    <br>
+    <label>Last Name<br><input name="lastName" type="text"></label>
+    <br>
+    <label>Date Of Birth<br><input name="dob" type="date"></label>
+    <br>
+    <label>Bio <br> <textarea name="bio"></textarea></label>
+    <br>
     <input type="submit">
 </form>
 </body>

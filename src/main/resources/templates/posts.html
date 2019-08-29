@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>posts</title>
+</head>
+<body>
+<div th:replace="fragments/nav :: nav"></div>
+
+<form action="/posts" method="post">
+    <h2>New Post</h2>
+    <label for=""><textarea name="body" id="" cols="30" rows="10"></textarea></label>
+    <label ><input type="submit"> submit </label>
+</form>
+<h3 th:text="${user.firstName}"></h3>
+<div th:each="post : ${user.posts}">
+    <h6 th:text="${post.createdAt}"></h6>
+    <p th:text="${post.body}"></p>
+</div>
+
+</body>
+</html>
