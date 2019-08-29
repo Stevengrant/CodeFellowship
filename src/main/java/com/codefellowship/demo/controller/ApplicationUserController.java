@@ -33,6 +33,7 @@ public class ApplicationUserController {
     public String getSignup(){
         return "signup";
     }
+
     @PostMapping("/signup")
     public RedirectView postSignup(String username, String password, String firstName, String lastName, String dob, String bio){
         ApplicationUser u = new ApplicationUser(username, encoder.encode(password), firstName, lastName, dob, bio);
@@ -42,7 +43,8 @@ public class ApplicationUserController {
 
     @GetMapping("/users/{id}")
     public String getUser(@PathVariable long id, Principal p, Model m){
-        m.addAttribute("viewedUser",applicationUserRepository.findById(id).get());
+        ApplicationUser user = applicationUserRepository.findById(id).get();
+        m.addAttribute("user",user);
         return "viewUser";
 
     }

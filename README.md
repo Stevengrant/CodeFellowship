@@ -13,4 +13,6 @@ un comment and fillout your db login info if needed.
 * set up db functionallity
 * hashing pw's
 
-
+#### DAY TWO
+* Added posts
+* updated profile to list said posts.
